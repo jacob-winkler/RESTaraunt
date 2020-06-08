@@ -1,0 +1,12 @@
+<div *ngIf="reservation">
+    <h2>{{reservation.fields.name | uppercase}} Details</h2>
+    <div><span>Id: </span>{{reservation.id}}</div>
+    <div><span>Name: </span>{{reservation.fields.name}}</div>
+    <div><span>Table: </span>{{reservation.fields.table}}</div>
+    <div><span>Number of guests: </span>{{reservation.fields.numberOfGuests}}</div>
+    <div><span>Reservation Time: </span>{{reservation.fields.datetime}}</div>
+    <div><span>Phone: </span>{{reservation.fields.phoneNumber}}</div>
+    <div><span>Date Created: </span>{{reservation.createdTime}}</div>
+
+    <button (click)="goBack()">go back</button>
+</div>

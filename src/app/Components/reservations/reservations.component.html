@@ -1,0 +1,33 @@
+<div>
+    <form #reservation="ngForm" (ngSubmit)="add(reservation)" novalidate>
+        <label>Reservation name:
+            <input name="name" ngModel/>     
+        </label>
+        <label>Reservation time:
+            <input type="datetime-local" name="time" ngModel/>
+        </label>
+        <label>Number of guests:
+            <input name="guestCount" ngModel/>
+        </label>
+        <label>Table number:
+            <input name="tableNumber" ngModel/>
+        </label>
+        <label>Phone number:
+            <input name="phoneNumber" ngModel/>
+        </label>
+        <button>
+            add
+        </button>
+    </form>   
+    
+</div>
+
+<ul class="reservations">
+  <li *ngFor="let reservation of reservations">
+    <a routerLink="/detail/{{reservation.id}}">
+        {{reservation.fields.name}}
+    </a>
+    <button class="delete" title="delete reservation"
+      (click)="delete(reservation)">x</button>
+  </li>
+</ul>
